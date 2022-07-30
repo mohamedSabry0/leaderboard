@@ -1,14 +1,6 @@
-// import _ from 'lodash';
 import './style.css';
-function component() {
-  const element = document.createElement('div');
+import scores from './get_scores.js';
+import scoresList from './dom_elements.js';
+import generateLi from './elements_generator.js';
 
-  // Lodash, imported
-
-  // element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
-
-  return element;
-}
-
-document.body.appendChild(component());
+scores.forEach((item) => { scoresList.appendChild(generateLi(item)); });
