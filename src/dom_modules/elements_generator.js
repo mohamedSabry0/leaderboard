@@ -10,4 +10,11 @@ const generateLi = (scoreItem) => {
   return li;
 };
 
-export default generateLi;
+const populateList = (scores, scoresList) => {
+  scoresList.innerHTML = '';
+  scores.then((list) => {
+    list.forEach((item) => { scoresList.appendChild(generateLi(item)); });
+  });
+};
+
+export default populateList;

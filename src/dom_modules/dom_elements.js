@@ -1,3 +1,8 @@
 const scoresList = document.getElementsByClassName('scores-list')[0];
 
-export default scoresList;
+const refreshBtn = document.getElementById('refresh');
+
+export {
+  scoresList,
+  refreshBtn,
+};
