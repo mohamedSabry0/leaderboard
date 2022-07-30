@@ -5,7 +5,17 @@
   justify-content: space-between;
 }
 
+.scores-list {
+  padding: 0;
+  list-style: none;
+}
+
 .input-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+}
+
+.header {
+  text-align: center;
 }
