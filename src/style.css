@@ -1,0 +1,11 @@
+.container {
+  margin: auto;
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
