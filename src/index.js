@@ -1,7 +1,6 @@
 import './style.css';
-import { scores } from './get_scores';
-import { scoresList } from './dom_elements';
-import { generateLi } from './elements_generator';
+import scores from './get_scores.js';
+import scoresList from './dom_elements.js';
+import generateLi from './elements_generator.js';
 
-
-scores.forEach(item => {scoresList.appendChild(generateLi(item))})
+scores.forEach((item) => { scoresList.appendChild(generateLi(item)); });

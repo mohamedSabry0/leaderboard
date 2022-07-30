@@ -1,4 +1,3 @@
-
 const generateLi = (scoreItem) => {
   const li = document.createElement('li');
   const name = document.createElement('span');
@@ -8,10 +7,7 @@ const generateLi = (scoreItem) => {
   score.textContent = scoreItem.score;
 
   li.append(name, score);
-  console.log(li)
   return li;
-}
+};
 
-export {
-  generateLi,
-}
+export default generateLi;

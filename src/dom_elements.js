@@ -1,6 +1,3 @@
-const scoresList = document.getElementsByClassName('scores-list')[0]
+const scoresList = document.getElementsByClassName('scores-list')[0];
 
-
-export {
-  scoresList,
-}
+export default scoresList;
