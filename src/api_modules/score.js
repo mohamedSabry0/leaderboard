@@ -1,7 +1,8 @@
+import { displayError, displaySuccess } from '../dom_modules/display_message.js';
 import gameId from './game.js';
 
 const scoresEndPoint = 'https://us-central1-js'
-+ `-capstone-backend.cloudfunctions.net/api/games/${gameId}/scores`;
++ `-capstone-backend.cloudfunctions.net/api/games/${gameId}/score`;
 
 const scores = fetch(scoresEndPoint)
   .then((response) => {
@@ -9,11 +10,11 @@ const scores = fetch(scoresEndPoint)
       const value = response.json();
       return Promise.resolve(value);
     }
-    return Promise.reject('test value');
+    return Promise.reject(new Error('a problem receiving the scores'));
   })
   .then((json) => json.result)
   .catch((error) => {
-    console.log(error);
+    displayError(error);
     return [];
   });
 
@@ -26,7 +27,7 @@ const addScore = (scoreRecord) => {
     },
   })
     .then((response) => response.json())
-    .then((json) => console.log(json));
+    .then((json) => displaySuccess(json));
 };
 
 export {
