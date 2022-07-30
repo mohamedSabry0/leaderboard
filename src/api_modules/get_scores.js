@@ -1,3 +1,4 @@
+// used as a testing list
 const scores = [
   { user: 'Name1', score: 262 },
   { user: 'Name3', score: 252 },
