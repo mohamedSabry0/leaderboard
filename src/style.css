@@ -9,6 +9,8 @@
   padding: 0;
   list-style: none;
   flex: 1;
+  border: 2px solid #000;
+  border-radius: 2px;
 }
 
 .input-container {
@@ -29,23 +31,18 @@
   margin-right: 2em;
 }
 
-.score-container div{
+.score-container div {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 
-.scores-list {
-  border: 2px solid #000;
-  border-radius: 2px;
-}
-
 .scores-list li {
   padding: 0.5em 0.8em;
 }
 
-.scores-list li:nth-child(even){
+.scores-list li:nth-child(even) {
   background-color: #ddd;
 }
 
