@@ -4,8 +4,21 @@ const scoresEndPoint =`https://us-central1-js`+
 `-capstone-backend.cloudfunctions.net/api/games/${gameId}/scores`;
 
 const scores = fetch(scoresEndPoint)
-.then((response) => response.json())
-.then((json) => json.result);
+.then((response) => {
+  if(response.ok){
+    const value = response.json();
+    return Promise.resolve(value);
+  } 
+  return Promise.reject('test value');
+})
+.then((json) => json.result)
+.catch((error) => {
+  console.log(error)
+  return [];
+}
+);
+
+
 
 const addScore = (scoreRecord) => {
   fetch(scoresEndPoint, {
