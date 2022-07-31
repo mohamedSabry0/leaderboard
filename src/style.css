@@ -50,9 +50,26 @@ button {
   background-color: #fff;
   border: 2px solid #000;
   box-shadow: 2px 2px #000;
+  cursor: pointer;
 }
 
 #submit {
   margin-left: auto;
   width: fit-content;
+}
+
+.success {
+  padding: 0.5em;
+  background-color: rgb(156, 249, 162);
+  border-radius: 5px;
+}
+
+.message {
+  display: none;
+}
+
+.error {
+  padding: 0.5em;
+  background-color: rgb(249, 165, 165);
+  border-radius: 5px;
 }
