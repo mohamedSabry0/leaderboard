@@ -6,18 +6,18 @@ const scoresEndPoint = 'https://us-central1-js'
 
 const getScores = async () => {
   const result = await fetch(scoresEndPoint)
-  .then((response) => {
-    if (response.ok) {
-      const value = response.json();
-      return Promise.resolve(value);
-    }
-    return Promise.reject(new Error('a problem receiving the scores'));
-  })
-  .then((json) => json.result)
-  .catch((error) => {
-    displayError(error);
-    return [];
-  });
+    .then((response) => {
+      if (response.ok) {
+        const value = response.json();
+        return Promise.resolve(value);
+      }
+      return Promise.reject(new Error('a problem receiving the scores'));
+    })
+    .then((json) => json.result)
+    .catch((error) => {
+      displayError(error);
+      return [];
+    });
   return result;
 };
 
@@ -47,5 +47,5 @@ const addScore = (scoreRecord) => {
 export {
   scores,
   addScore,
-  getScores
+  getScores,
 };

@@ -6,7 +6,7 @@ const refreshHandler = {
   handleEvent() {
     const scores = getScores();
     populateList(scores, scoresList);
-  }
-}
+  },
+};
 
 export default refreshHandler;
