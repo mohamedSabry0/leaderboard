@@ -1,14 +1,12 @@
+import { getScores } from '../api_modules/score.js';
+import { scoresList } from './dom_elements.js';
 import populateList from './elements_generator.js';
 
-class RefreshHandler {
-  constructor(scores, listElem) {
-    this.scores = scores;
-    this.listElem = listElem;
-  }
-
+const refreshHandler = {
   handleEvent() {
-    populateList(this.scores, this.listElem);
+    const scores = getScores();
+    populateList(scores, scoresList);
   }
 }
 
-export default RefreshHandler;
+export default refreshHandler;

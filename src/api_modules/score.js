@@ -4,7 +4,8 @@ import gameId from './game.js';
 const scoresEndPoint = 'https://us-central1-js'
 + `-capstone-backend.cloudfunctions.net/api/games/${gameId}/scores`;
 
-const scores = fetch(scoresEndPoint)
+const getScores = async () => {
+  const result = await fetch(scoresEndPoint)
   .then((response) => {
     if (response.ok) {
       const value = response.json();
@@ -17,6 +18,10 @@ const scores = fetch(scoresEndPoint)
     displayError(error);
     return [];
   });
+  return result;
+};
+
+const scores = getScores();
 
 const addScore = (scoreRecord) => {
   fetch(scoresEndPoint, {
@@ -26,11 +31,21 @@ const addScore = (scoreRecord) => {
       'Content-type': 'application/json; charset=UTF-8',
     },
   })
-    .then((response) => response.json())
-    .then((json) => displaySuccess(json));
+    .then((response) => {
+      if (response.ok) {
+        const value = response.json();
+        return Promise.resolve(value);
+      }
+      return Promise.reject(new Error('a problem saving the new score'));
+    })
+    .catch((error) => {
+      displayError(error);
+    })
+    .then((json) => displaySuccess(json.result));
 };
 
 export {
   scores,
   addScore,
+  getScores
 };
