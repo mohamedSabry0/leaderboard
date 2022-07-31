@@ -2,7 +2,7 @@ import { displayError, displaySuccess } from '../dom_modules/display_message.js'
 import gameId from './game.js';
 
 const scoresEndPoint = 'https://us-central1-js'
-+ `-capstone-backend.cloudfunctions.net/api/games/${gameId}/score`;
++ `-capstone-backend.cloudfunctions.net/api/games/${gameId}/scores`;
 
 const scores = fetch(scoresEndPoint)
   .then((response) => {
