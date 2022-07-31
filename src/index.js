@@ -7,8 +7,6 @@ import submitHandler from './dom_modules/submit_handler.js';
 
 populateList(apiScores, scoresList);
 
-// const refreshHandler = new RefreshHandler(apiScores, scoresList);
-
 refreshBtn.addEventListener('click', refreshHandler);
 
 submitBtn.addEventListener('click', submitHandler);
