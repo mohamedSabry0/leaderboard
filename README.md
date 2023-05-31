@@ -6,6 +6,11 @@
 
 - HTML/CSS
 - Javascript
+- Webpack
+
+## Live Demo
+
+[Live Demo Link](https://leaderboard-h5v3.onrender.com)
 
 ## Getting Started
 
@@ -17,16 +22,28 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
-- Clone or download the project to your local machine.
+Clone this repository to your desired folder:
 
-- Change to the project's root directory.
+```sh
+  cd my-folder
+  git clone git@github.com:mohamedSabry0/todo-list-2.git
+```
 
-- Make sure to checkout to the feature branch.
+- Change to the project's root directory
+
+  ```sh
+    cd todo-list-2
+  ```
+
+- Make sure to checkout to the feature branch
+
+  ```sh
+    git checkout list-structure
+  ```
 
 - Run `npm install`
 
 - Run `npm run start`
-
 
 ## Author
 
