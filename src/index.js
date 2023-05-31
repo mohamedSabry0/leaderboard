@@ -1,6 +1,12 @@
 import './style.css';
-import scores from './get_scores.js';
-import scoresList from './dom_elements.js';
-import generateLi from './elements_generator.js';
+import { scoresList, refreshBtn, submitBtn } from './dom_modules/dom_elements.js';
+import populateList from './dom_modules/elements_generator.js';
+import { scores as apiScores } from './api_modules/score.js';
+import refreshHandler from './dom_modules/refresh_handler.js';
+import submitHandler from './dom_modules/submit_handler.js';
 
-scores.forEach((item) => { scoresList.appendChild(generateLi(item)); });
+populateList(apiScores, scoresList);
+
+refreshBtn.addEventListener('click', refreshHandler);
+
+submitBtn.addEventListener('click', submitHandler);
